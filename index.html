@@ -69,9 +69,7 @@
             filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
             transition: transform 0.4s ease;
         }
-        .rings-photo:hover {
-            transform: scale(1.04);
-        }
+        .rings-photo:hover { transform: scale(1.04); }
         .names {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(66px, 12vw, 100px);
@@ -142,26 +140,14 @@
             animation: childFloatRight 4.8s ease-in-out infinite;
         }
         @keyframes childFloatLeft {
-            0%, 100% {
-                transform: rotate(-3deg) translateX(-4px) translateY(0);
-            }
-            40% {
-                transform: rotate(-3deg) translateX(-4px) translateY(-6px);
-            }
-            70% {
-                transform: rotate(-3deg) translateX(-4px) translateY(-2px);
-            }
+            0%, 100% { transform: rotate(-3deg) translateX(-4px) translateY(0); }
+            40% { transform: rotate(-3deg) translateX(-4px) translateY(-6px); }
+            70% { transform: rotate(-3deg) translateX(-4px) translateY(-2px); }
         }
         @keyframes childFloatRight {
-            0%, 100% {
-                transform: rotate(2deg) translateY(0);
-            }
-            40% {
-                transform: rotate(2deg) translateY(-6px);
-            }
-            70% {
-                transform: rotate(2deg) translateY(-2px);
-            }
+            0%, 100% { transform: rotate(2deg) translateY(0); }
+            40% { transform: rotate(2deg) translateY(-6px); }
+            70% { transform: rotate(2deg) translateY(-2px); }
         }
 
         .schedule {
@@ -173,10 +159,7 @@
             color: #3a2c1c;
             border-collapse: collapse;
         }
-        .schedule td {
-            padding: 7px 0;
-            vertical-align: top;
-        }
+        .schedule td { padding: 7px 0; vertical-align: top; }
         .schedule .time {
             font-weight: 600;
             color: #7a5a3c;
@@ -191,9 +174,7 @@
             color: #6b5d4a;
             border-bottom: 1px dashed rgba(182, 139, 76, 0.25);
         }
-        .schedule tr:last-child .desc {
-            border-bottom: none;
-        }
+        .schedule tr:last-child .desc { border-bottom: none; }
 
         .countdown-label {
             font-family: 'Montserrat', sans-serif;
@@ -203,12 +184,7 @@
             color: #8a7a6a;
             margin: 25px 0 12px;
         }
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
+        .timer { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .timer-block {
             background: rgba(255, 255, 255, 0.7);
             border: 1px solid rgba(182, 139, 76, 0.35);
@@ -229,24 +205,10 @@
             color: #9a8a7a;
             margin-top: 4px;
         }
-        .timer-separator {
-            font-size: 26px;
-            color: #b68b4c;
-            align-self: center;
-        }
+        .timer-separator { font-size: 26px; color: #b68b4c; align-self: center; }
 
-        .date {
-            font-weight: 500;
-            color: #3a2c1c;
-            font-size: 22px;
-            margin: 18px 0 4px;
-        }
-        .location {
-            font-style: italic;
-            color: #7a6a5a;
-            font-size: 17px;
-            margin-bottom: 10px;
-        }
+        .date { font-weight: 500; color: #3a2c1c; font-size: 22px; margin: 18px 0 4px; }
+        .location { font-style: italic; color: #7a6a5a; font-size: 17px; margin-bottom: 10px; }
 
         .rsvp-title {
             font-family: 'Montserrat', sans-serif;
@@ -255,12 +217,7 @@
             color: #8a7a6a;
             margin: 30px 0 14px;
         }
-        .rsvp-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-        }
+        .rsvp-form { display: flex; flex-direction: column; align-items: center; gap: 14px; }
         .name-input {
             width: 260px;
             padding: 12px 18px;
@@ -273,14 +230,8 @@
             outline: none;
             transition: 0.3s;
         }
-        .name-input:focus {
-            border-color: #b68b4c;
-            box-shadow: 0 0 0 3px rgba(182, 139, 76, 0.12);
-        }
-        .rsvp-buttons {
-            display: flex;
-            gap: 16px;
-        }
+        .name-input:focus { border-color: #b68b4c; box-shadow: 0 0 0 3px rgba(182, 139, 76, 0.12); }
+        .rsvp-buttons { display: flex; gap: 16px; }
         .rsvp-btn {
             padding: 12px 28px;
             border: 1px solid #b68b4c;
@@ -294,20 +245,9 @@
             transition: 0.3s;
             color: #3a2c1c;
         }
-        .rsvp-btn:hover {
-            background: #faf5e8;
-            border-color: #b68b4c;
-        }
-        .rsvp-btn:disabled {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-        .rsvp-feedback {
-            margin-top: 12px;
-            font-style: italic;
-            color: #6b5d4a;
-            min-height: 22px;
-        }
+        .rsvp-btn:hover { background: #faf5e8; border-color: #b68b4c; }
+        .rsvp-btn:disabled { opacity: 0.5; pointer-events: none; }
+        .rsvp-feedback { margin-top: 12px; font-style: italic; color: #6b5d4a; min-height: 22px; }
 
         .shater-photo {
             width: 100%;
@@ -317,11 +257,7 @@
             border-bottom: 1px solid #e6d7bc;
         }
 
-        .wish-section {
-            background: #ffffff;
-            padding: 35px 25px;
-            color: #3a2c1c;
-        }
+        .wish-section { background: #ffffff; padding: 35px 25px; color: #3a2c1c; }
         .wish-content {
             max-width: 500px;
             margin: 0 auto;
@@ -331,14 +267,8 @@
             color: #4a3a2c;
             text-align: center;
         }
-        .wish-content p {
-            margin-bottom: 15px;
-        }
-        .wish-content .wish-icon {
-            font-size: 24px;
-            color: #b68b4c;
-            margin-bottom: 10px;
-        }
+        .wish-content p { margin-bottom: 15px; }
+        .wish-content .wish-icon { font-size: 24px; color: #b68b4c; margin-bottom: 10px; }
 
         .final-image {
             width: 100%;
@@ -348,17 +278,8 @@
             border-top: 1px solid #e6d7bc;
         }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 0.8s ease forwards;
-        }
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease forwards; }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
         .hero-content .fade-in:nth-child(1) { animation-delay: 0.2s; }
         .hero-content .fade-in:nth-child(2) { animation-delay: 0.6s; }
         .info-content .fade-in:nth-child(1) { animation-delay: 0.9s; }
@@ -440,8 +361,8 @@
 
     <script>
         (function() {
-            const token = '8755621820:AAEmXp6y__fH5YmOEF-hQSaHwrWFcplmd9A';
-            const chatId = '820156615'; // <-- верный chat_id из ответа API
+            // ✅ Ваша новая рабочая ссылка на Formspree
+            const formspreeEndpoint = 'https://formspree.io/f/xbdwzlnb';
             const nameInput = document.getElementById('guestName');
             const acceptBtn = document.getElementById('acceptBtn');
             const declineBtn = document.getElementById('declineBtn');
@@ -464,40 +385,28 @@
                 feedback.className = 'rsvp-feedback fade-in';
                 feedback.style.color = '#5a4e3a';
 
-                const text = [
-                    '💍 Свадьба Ахрора и Яны',
-                    '',
-                    'Гость: ' + name.replace(/[_*[\]()~`>#+\-=|{}.!]/g, '\\$&'),
-                    'Ответ: ' + (answer === 'yes' ? '✅ Приду' : '❌ Не смогу'),
-                    '',
-                    'Дата: 4 июля 2026',
-                    'Москва, ул. Таймырская, д.1'
-                ].join('\n');
-
                 try {
-                    const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+                    const res = await fetch(formspreeEndpoint, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
-                            chat_id: chatId,
-                            text: text,
-                            parse_mode: 'Markdown'
+                            guest_name: name,
+                            answer: answer === 'yes' ? '✅ Приду' : '❌ Не смогу присутствовать',
                         })
                     });
-                    const data = await res.json();
-                    if (data.ok) {
+
+                    if (res.ok) {
                         feedback.textContent = 'Благодарим! Ваш ответ отправлен.';
                         feedback.className = 'rsvp-feedback fade-in';
                         feedback.style.color = '#3a5a3a';
                     } else {
-                        console.error('Telegram API error:', data);
-                        feedback.textContent = 'Ошибка: ' + (data.description || 'неизвестная причина');
+                        const data = await res.json();
+                        feedback.textContent = 'Ошибка: ' + (data.error || 'попробуйте позже');
                         feedback.className = 'rsvp-feedback fade-in';
                         feedback.style.color = '#8b4b4b';
                     }
                 } catch (e) {
-                    console.error('Fetch error:', e);
-                    feedback.textContent = 'Проблема с соединением: ' + e.message;
+                    feedback.textContent = 'Проблема с сетью. Проверьте интернет.';
                     feedback.className = 'rsvp-feedback fade-in';
                     feedback.style.color = '#8b4b4b';
                 } finally {
