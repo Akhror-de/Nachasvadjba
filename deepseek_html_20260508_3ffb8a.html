@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу — Ахрор и Яна</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f5ede0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            padding: 20px;
+        }
+
+        .invitation {
+            position: relative;
+            max-width: 720px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Верхняя часть с кольцами и именами */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            background: url('https://i.ibb.co/bjb2Nc9d/Screenshot-20260503-091051-Pinterest.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(2px);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .rings-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
+            transition: transform 0.4s ease;
+        }
+        .rings-photo:hover {
+            transform: scale(1.04);
+        }
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(66px, 12vw, 100px);
+            color: #3a2c1c;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        .ampersand {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(42px, 7.5vw, 60px);
+            color: #b68b4c;
+            margin: 0 15px;
+        }
+
+        /* Основной блок с информацией */
+        .info-section {
+            position: relative;
+            background: url('https://i.ibb.co/bjVLSVxr/Screenshot-20260503-091144-Pinterest.jpg') center/cover no-repeat;
+            padding: 30px 25px 35px;
+            color: #3a2c1c;
+        }
+        .info-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 250, 240, 0.85);
+            z-index: 1;
+        }
+        .info-content {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #7a6a5a;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        /* Детские фото */
+        .childhood {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            gap: 0;
+        }
+        .child-photo {
+            width: 105px;
+            height: 105px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+            transition: transform 0.35s;
+            position: relative;
+        }
+        .child-photo:first-child {
+            margin-right: -5px;
+            z-index: 1;
+            animation: childFloatLeft 4.8s ease-in-out infinite;
+        }
+        .child-photo:last-child {
+            margin-left: -5px;
+            z-index: 2;
+            animation: childFloatRight 4.8s ease-in-out infinite;
+        }
+        @keyframes childFloatLeft {
+            0%, 100% {
+                transform: rotate(-3deg) translateX(-4px) translateY(0);
+            }
+            40% {
+                transform: rotate(-3deg) translateX(-4px) translateY(-6px);
+            }
+            70% {
+                transform: rotate(-3deg) translateX(-4px) translateY(-2px);
+            }
+        }
+        @keyframes childFloatRight {
+            0%, 100% {
+                transform: rotate(2deg) translateY(0);
+            }
+            40% {
+                transform: rotate(2deg) translateY(-6px);
+            }
+            70% {
+                transform: rotate(2deg) translateY(-2px);
+            }
+        }
+
+        /* Расписание */
+        .schedule {
+            width: 100%;
+            max-width: 380px;
+            margin: 25px auto;
+            text-align: left;
+            font-size: 16px;
+            color: #3a2c1c;
+            border-collapse: collapse;
+        }
+        .schedule td {
+            padding: 7px 0;
+            vertical-align: top;
+        }
+        .schedule .time {
+            font-weight: 600;
+            color: #7a5a3c;
+            white-space: nowrap;
+            padding-right: 16px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.04em;
+            width: 60px;
+        }
+        .schedule .desc {
+            font-style: italic;
+            color: #6b5d4a;
+            border-bottom: 1px dashed rgba(182, 139, 76, 0.25);
+        }
+        .schedule tr:last-child .desc {
+            border-bottom: none;
+        }
+
+        /* Таймер */
+        .countdown-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: #8a7a6a;
+            margin: 25px 0 12px;
+        }
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .timer-block {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(182, 139, 76, 0.35);
+            border-radius: 6px;
+            padding: 12px 10px;
+            min-width: 65px;
+        }
+        .timer-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: #3a2c1c;
+        }
+        .timer-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 8px;
+            letter-spacing: 0.18em;
+            color: #9a8a7a;
+            margin-top: 4px;
+        }
+        .timer-separator {
+            font-size: 26px;
+            color: #b68b4c;
+            align-self: center;
+        }
+
+        .date {
+            font-weight: 500;
+            color: #3a2c1c;
+            font-size: 22px;
+            margin: 18px 0 4px;
+        }
+        .location {
+            font-style: italic;
+            color: #7a6a5a;
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        /* RSVP */
+        .rsvp-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.32em;
+            color: #8a7a6a;
+            margin: 30px 0 14px;
+        }
+        .rsvp-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+        .name-input {
+            width: 260px;
+            padding: 12px 18px;
+            border: 1px solid rgba(182, 139, 76, 0.45);
+            border-radius: 6px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            text-align: center;
+            background: #fff;
+            outline: none;
+            transition: 0.3s;
+        }
+        .name-input:focus {
+            border-color: #b68b4c;
+            box-shadow: 0 0 0 3px rgba(182, 139, 76, 0.12);
+        }
+        .rsvp-buttons {
+            display: flex;
+            gap: 16px;
+        }
+        .rsvp-btn {
+            padding: 12px 28px;
+            border: 1px solid #b68b4c;
+            background: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.3s;
+            color: #3a2c1c;
+        }
+        .rsvp-btn:hover {
+            background: #faf5e8;
+            border-color: #b68b4c;
+        }
+        .rsvp-btn:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .rsvp-feedback {
+            margin-top: 12px;
+            font-style: italic;
+            color: #6b5d4a;
+            min-height: 22px;
+        }
+        .feedback-success {
+            color: #3a5a3a;
+        }
+        .feedback-error {
+            color: #8b4b4b;
+        }
+
+        /* Фото шатра */
+        .shater-photo {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            max-height: 400px;
+            border-bottom: 1px solid #e6d7bc;
+        }
+
+        /* Секция с пожеланием */
+        .wish-section {
+            background: #ffffff;
+            padding: 35px 25px;
+            color: #3a2c1c;
+        }
+        .wish-content {
+            max-width: 500px;
+            margin: 0 auto;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #4a3a2c;
+            text-align: center;
+        }
+        .wish-content p {
+            margin-bottom: 15px;
+        }
+        .wish-content .wish-icon {
+            font-size: 24px;
+            color: #b68b4c;
+            margin-bottom: 10px;
+        }
+
+        /* Картинка в самом конце (анимированная) */
+        .final-image {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            max-height: 450px;
+            border-top: 1px solid #e6d7bc;
+        }
+
+        /* Анимация появления */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content .fade-in:nth-child(1) { animation-delay: 0.2s; }
+        .hero-content .fade-in:nth-child(2) { animation-delay: 0.6s; }
+        .info-content .fade-in:nth-child(1) { animation-delay: 0.9s; }
+        .info-content .fade-in:nth-child(2) { animation-delay: 1.2s; }
+        .info-content .fade-in:nth-child(3) { animation-delay: 1.5s; }
+        .info-content .fade-in:nth-child(4) { animation-delay: 1.8s; }
+        .info-content .fade-in:nth-child(5) { animation-delay: 2.1s; }
+        .info-content .fade-in:nth-child(6) { animation-delay: 2.4s; }
+        .shater-photo.fade-in { animation-delay: 2.8s; }
+        .wish-content.fade-in { animation-delay: 3.2s; }
+        .final-image.fade-in { animation-delay: 3.6s; }
+    </style>
+</head>
+<body>
+    <div class="invitation">
+        <div class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img class="rings-photo fade-in" src="https://i.ibb.co/nNbS5Bf9/golden-wedding-rings-3d-realistic-illustration-engagement-33099-519.png" alt="Обручальные кольца">
+                <div class="names fade-in">Ахрор <span class="ampersand">&</span> Яна</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-overlay"></div>
+            <div class="info-content">
+                <div class="subtitle fade-in">С радостью приглашают вас на свадьбу!</div>
+                <div class="childhood fade-in">
+                    <img class="child-photo" src="https://i.postimg.cc/Kjc5vYVC/lv-0-20260508133443.jpg" alt="Ахрор в детстве">
+                    <img class="child-photo" src="https://i.postimg.cc/Hk89LRZH/lv-0-20260508092632.jpg" alt="Яна в детстве">
+                </div>
+
+                <table class="schedule fade-in">
+                    <tr><td class="time">15:00</td><td class="desc">Сбор гостей</td></tr>
+                    <tr><td class="time">15:30</td><td class="desc">Торжественная церемония</td></tr>
+                    <tr><td class="time">16:00</td><td class="desc">Фотосессия с гостями</td></tr>
+                    <tr><td class="time">17:00</td><td class="desc">Свадебный банкет и танцы</td></tr>
+                    <tr><td class="time">21:00</td><td class="desc">Дискотека</td></tr>
+                </table>
+
+                <div class="countdown-label fade-in">До начала торжества</div>
+                <div class="timer fade-in" id="timer">
+                    <div class="timer-block"><div class="timer-number" id="days">00</div><div class="timer-label">Дней</div></div>
+                    <div class="timer-separator">:</div>
+                    <div class="timer-block"><div class="timer-number" id="hours">00</div><div class="timer-label">Часов</div></div>
+                    <div class="timer-separator">:</div>
+                    <div class="timer-block"><div class="timer-number" id="minutes">00</div><div class="timer-label">Минут</div></div>
+                    <div class="timer-separator">:</div>
+                    <div class="timer-block"><div class="timer-number" id="seconds">00</div><div class="timer-label">Секунд</div></div>
+                </div>
+
+                <div class="date fade-in">4 июля 2026 года</div>
+                <div class="location fade-in">Москва, ул. Таймырская, дом 1</div>
+
+                <div class="rsvp-title fade-in">Подтвердите присутствие</div>
+                <div class="rsvp-form fade-in">
+                    <input type="text" class="name-input" id="guestName" placeholder="Ваше имя">
+                    <div class="rsvp-buttons">
+                        <button class="rsvp-btn" id="acceptBtn">Приду</button>
+                        <button class="rsvp-btn" id="declineBtn">Не смогу</button>
+                    </div>
+                </div>
+                <div class="rsvp-feedback fade-in" id="feedback"></div>
+            </div>
+        </div>
+
+        <img class="shater-photo fade-in" src="https://i.postimg.cc/3RS1mdLn/IMG-20260508-090035-652.jpg" alt="Шатёр">
+
+        <div class="wish-section">
+            <div class="wish-content fade-in">
+                <div class="wish-icon">🌸</div>
+                <p>Мы очень любим цветы… но, к сожалению, сразу после свадьбы уезжаем в отпуск ✈️<br>Поэтому они могут немного загрустить без нас.</p>
+                <p>Если вы планировали букет — будем рады, если вместо него вы выберете подарочный сертификат.<br>Обещаем: он точно не завянет и принесёт нам много радости 🙂</p>
+            </div>
+        </div>
+
+        <!-- Только одна картинка в конце -->
+        <img class="final-image fade-in" src="https://i.postimg.cc/rpcRLP7m/gemini-image-2-sgeneriruj-ih-vmeste-v-stile-love-is-0.jpg" alt="Молодожёны за фортепиано">
+    </div>
+
+    <script>
+        (function() {
+            const token = '8755621820:AAEmXp6y__fH5YmOEF-hQSaHwrWFcplmd9A';
+            const chatId = '639457405';
+            const nameInput = document.getElementById('guestName');
+            const acceptBtn = document.getElementById('acceptBtn');
+            const declineBtn = document.getElementById('declineBtn');
+            const feedback = document.getElementById('feedback');
+            let sending = false;
+
+            async function sendRSVP(answer) {
+                const name = nameInput.value.trim();
+                if (!name) {
+                    feedback.textContent = 'Пожалуйста, введите имя';
+                    feedback.className = 'rsvp-feedback fade-in feedback-error';
+                    return;
+                }
+                if (sending) return;
+                sending = true;
+                acceptBtn.disabled = true;
+                declineBtn.disabled = true;
+                feedback.textContent = 'Отправка...';
+                feedback.className = 'rsvp-feedback fade-in';
+
+                const text = [
+                    '💍 Свадьба Ахрора и Яны',
+                    '',
+                    'Гость: ' + name.replace(/[_*[\]()~`>#+\-=|{}.!]/g, '\\$&'),
+                    'Ответ: ' + (answer === 'yes' ? '✅ Приду' : '❌ Не смогу'),
+                    '',
+                    'Дата: 4 июля 2026',
+                    'Москва, ул. Таймырская, д.1'
+                ].join('\n');
+
+                try {
+                    const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ chat_id: chatId, text: text, parse_mode: 'Markdown' })
+                    });
+                    const data = await res.json();
+                    if (data.ok) {
+                        feedback.textContent = 'Благодарим! Ваш ответ отправлен.';
+                        feedback.className = 'rsvp-feedback fade-in feedback-success';
+                    } else {
+                        feedback.textContent = 'Ошибка при отправке. Попробуйте позже.';
+                        feedback.className = 'rsvp-feedback fade-in feedback-error';
+                    }
+                } catch (e) {
+                    feedback.textContent = 'Проблема с соединением.';
+                    feedback.className = 'rsvp-feedback fade-in feedback-error';
+                } finally {
+                    sending = false;
+                    acceptBtn.disabled = false;
+                    declineBtn.disabled = false;
+                }
+            }
+
+            acceptBtn.addEventListener('click', () => sendRSVP('yes'));
+            declineBtn.addEventListener('click', () => sendRSVP('no'));
+
+            const target = new Date('2026-07-04T12:00:00+03:00').getTime();
+            function updateTimer() {
+                const now = Date.now();
+                let diff = target - now;
+                if (diff < 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById('days').textContent = String(d).padStart(2, '0');
+                document.getElementById('hours').textContent = String(h).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+            }
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        })();
+    </script>
+</body>
+</html>
