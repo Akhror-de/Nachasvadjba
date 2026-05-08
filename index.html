@@ -441,7 +441,7 @@
     <script>
         (function() {
             const token = '8755621820:AAEmXp6y__fH5YmOEF-hQSaHwrWFcplmd9A';
-            const chatId = '639457405';
+            const chatId = '820156615'; // <-- верный chat_id из ответа API
             const nameInput = document.getElementById('guestName');
             const acceptBtn = document.getElementById('acceptBtn');
             const declineBtn = document.getElementById('declineBtn');
@@ -490,7 +490,6 @@
                         feedback.className = 'rsvp-feedback fade-in';
                         feedback.style.color = '#3a5a3a';
                     } else {
-                        // Показываем реальную ошибку от Telegram API
                         console.error('Telegram API error:', data);
                         feedback.textContent = 'Ошибка: ' + (data.description || 'неизвестная причина');
                         feedback.className = 'rsvp-feedback fade-in';
